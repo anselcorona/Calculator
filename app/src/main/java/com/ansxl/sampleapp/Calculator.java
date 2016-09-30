@@ -10,25 +10,27 @@ import java.util.ArrayList;
 
 public class Calculator extends AppCompatActivity implements View.OnClickListener {
 
-    public Button Bt1;
-    public Button Bt2;
-    public Button Bt3;
-    public Button Bt4;
-    public Button Bt5;
-    public Button Bt6;
-    public Button Bt7;
-    public Button Bt8;
-    public Button Bt9;
-    public Button Bt0;
-    public Button Mas;
-    public Button Menos;
-    public Button Star;
-    public Button Slash;
-    public Button Igual;
-    public Button Punto;
-    public Button Clear;
-
+    public Button[] buttons = new Button[17];
     TextView pantallita;
+    private static final int[] BUTTON_IDS = {
+            R.id.Bt0,
+            R.id.Bt1,
+            R.id.Bt2,
+            R.id.Bt3,
+            R.id.Bt4,
+            R.id.Bt5,
+            R.id.Bt6,
+            R.id.Bt7,
+            R.id.Bt8,
+            R.id.Bt9,
+            R.id.Mas,
+            R.id.Menos,
+            R.id.Multiplicacion,
+            R.id.Division,
+            R.id.Igual,
+            R.id.Punto,
+            R.id.Clear
+    };
 
     float num1=0;
     float num2=0;
@@ -39,45 +41,12 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculateur);
-
-        Bt9 = (Button)  findViewById(R.id.Bt9);
-        Bt8 = (Button)  findViewById(R.id.Bt8);
-        Bt7 = (Button)  findViewById(R.id.Bt7);
-        Bt6 = (Button)  findViewById(R.id.Bt6);
-        Bt5 = (Button)  findViewById(R.id.Bt5);
-        Bt4 = (Button)  findViewById(R.id.Bt4);
-        Bt3 = (Button)  findViewById(R.id.Bt3);
-        Bt2 = (Button)  findViewById(R.id.Bt2);
-        Bt1 = (Button)  findViewById(R.id.Bt1);
-        Bt0 = (Button)  findViewById(R.id.Bt0);
-        Mas = (Button)  findViewById(R.id.Mas);
-        Menos=(Button)  findViewById(R.id.Menos);
-        Star= (Button)  findViewById(R.id.Multiplicacion);
-        Slash=(Button)  findViewById(R.id.Division);
-        Igual=(Button)  findViewById(R.id.Igual);
-        Punto=(Button)  findViewById(R.id.Punto);
-        Clear=(Button)  findViewById(R.id.Clear);
-
+        for(int i=0; i<17; i++){
+            buttons[i] = (Button) findViewById(BUTTON_IDS[i]);
+            buttons[i].setOnClickListener(this);
+        }
         pantallita = (TextView) findViewById(R.id.pantallita);
         pantallita.setTextSize(35);
-
-        Bt0.setOnClickListener(this);
-        Bt1.setOnClickListener(this);
-        Bt2.setOnClickListener(this);
-        Bt3.setOnClickListener(this);
-        Bt4.setOnClickListener(this);
-        Bt5.setOnClickListener(this);
-        Bt6.setOnClickListener(this);
-        Bt7.setOnClickListener(this);
-        Bt8.setOnClickListener(this);
-        Bt9.setOnClickListener(this);
-        Mas.setOnClickListener(this);
-        Menos.setOnClickListener(this);
-        Star.setOnClickListener(this);
-        Slash.setOnClickListener(this);
-        Igual.setOnClickListener(this);
-        Punto.setOnClickListener(this);
-        Clear.setOnClickListener(this);
 
         for (int i=0;i<4;i++){
             list.add(i,false);
@@ -104,7 +73,7 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
             //Botones numeros y punto
             case R.id.Bt0:{
                 if(resultgiven){
-                    Clear.performClick();
+                    buttons[16].performClick();
                     pantallita.append("0");
                     resultgiven=false;
                 }
@@ -114,7 +83,7 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
             }break;
             case R.id.Bt1:{
                 if(resultgiven){
-                    Clear.performClick();
+                    buttons[16].performClick();
                     pantallita.append("1");
                     resultgiven=false;
                 }
@@ -124,7 +93,7 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
             }break;
             case R.id.Bt2:{
                 if(resultgiven){
-                    Clear.performClick();
+                    buttons[16].performClick();
                     pantallita.append("2");
                     resultgiven=false;
                 }
@@ -134,7 +103,7 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
             }break;
             case R.id.Bt3:{
                 if(resultgiven){
-                    Clear.performClick();
+                    buttons[16].performClick();
                     pantallita.append("3");
                     resultgiven=false;
                 }
@@ -144,7 +113,7 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
             }break;
             case R.id.Bt4:{
                 if(resultgiven){
-                    Clear.performClick();
+                    buttons[16].performClick();
                     pantallita.append("4");
                     resultgiven=false;
                 }
@@ -154,7 +123,7 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
             }break;
             case R.id.Bt5:{
                 if(resultgiven){
-                    Clear.performClick();
+                    buttons[16].performClick();
                     pantallita.append("5");
                     resultgiven=false;
                 }
@@ -164,7 +133,7 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
             }break;
             case R.id.Bt6:{
                 if(resultgiven){
-                    Clear.performClick();
+                    buttons[16].performClick();
                     pantallita.append("6");
                     resultgiven=false;
                 }
@@ -174,7 +143,7 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
             }break;
             case R.id.Bt7:{
                 if(resultgiven){
-                    Clear.performClick();
+                    buttons[16].performClick();
                     pantallita.append("7");
                     resultgiven=false;
                 }
@@ -184,7 +153,7 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
             }break;
             case R.id.Bt8:{
                 if(resultgiven){
-                    Clear.performClick();
+                    buttons[16].performClick();
                     pantallita.append("8");
                     resultgiven=false;
                 }
@@ -194,7 +163,7 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
             }break;
             case R.id.Bt9:{
                 if(resultgiven){
-                    Clear.performClick();
+                    buttons[16].performClick();
                     pantallita.append("9");
                     resultgiven=false;
                 }
@@ -258,13 +227,13 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
                 }
                 else{
                     if(resultgiven){
-                        Clear.performClick();
+                        buttons[16].performClick();
                         resultgiven = false;
                     }
                     else {
                         num2 = Float.parseFloat(pantallita.getText().toString());
                         if((num2==0.0f) || (num1==0.0f)){ // can't compare null to a float because of float being a primitive type and null check is only used for object
-                            Clear.performClick();
+                            buttons[16].performClick();
                         }
                         else {
                             if (list.get(0)) {
