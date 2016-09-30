@@ -8,7 +8,7 @@ import android.widget.TextView;
 import java.lang.Boolean;
 import java.util.ArrayList;
 
-public class Calculateur extends AppCompatActivity implements View.OnClickListener {
+public class Calculator extends AppCompatActivity implements View.OnClickListener {
 
     public Button Bt1;
     public Button Bt2;
